@@ -1,0 +1,92 @@
+.job
+  overflow: hidden
+  margin: 155px 0
+  &__wrapper
+    padding-bottom: 50px
+    @media (max-width: 560px)
+      padding-bottom: 0
+    &::-webkit-scrollbar
+      height: 1px
+    &::-webkit-scrollbar-track
+      background: rgba(255, 255, 255, .2)
+      margin: 0 12px 0 15px
+    &::-webkit-scrollbar-thumb
+      background-color: white
+      border-radius: 20px
+      border: 3px solid white
+    @media (max-width: 991px)
+      overflow-x: auto
+
+  &__swiper-inner
+    display: flex
+    align-items: stretch
+    padding-left: max(15px, calc((100% - 1305px)/2))
+    gap: 24px
+
+  &__holder
+    position: relative
+    display: flex
+    align-items: flex-end
+    //transition: transform .5s linear
+    @media (max-width: 768px)
+      max-height: 510px
+    //&:hover
+    //  transform: scale(1.1)
+
+  &__slide
+    cursor: pointer
+    max-height: 728px
+    min-width: 460px
+
+  &__holder-title
+    position: absolute
+    font-family: "Inter", sans-serif
+    z-index: 1
+    font-size: 24px
+    max-width: 260px
+    line-height: 33px
+    margin: 0 0 50px 50px
+    bottom: 0
+    @media (max-width: 991px)
+      font-size: 18px
+      margin: 0 0 24px 24px
+
+  &__pagination
+    margin-top: 30px
+    @media (max-width: 991px)
+      display: none
+    & span
+      font-family: "Forum", sans-serif
+      font-size: 48px
+      color: rgba(255, 255, 255, .6)
+      &:first-child
+        color: white
+    &--swiper
+      display: flex
+      justify-content: flex-end
+      position: static
+      text-align: right
+      font-size: 30px
+      padding-bottom: 5px
+    & .swiper-pagination-current
+      margin-right: 10px
+    & .swiper-pagination-total
+      margin-left: 10px
+
+
+  &__button
+    display: flex
+    align-items: center
+    justify-content: center
+    background: rgba(255, 255, 255, 0.08)
+    box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.1)
+    backdrop-filter: blur(35px)
+    width: 104px
+    height: 104px
+    border-radius: 50%
+
+  &__swiper-arrow
+    max-width: 28px
+    max-height: 28px
+    &--right
+      transform: rotate(180deg)

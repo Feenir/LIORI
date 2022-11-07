@@ -1,0 +1,56 @@
+.client
+	height: 100vh
+	background-image: url("../img/clients/clients-1.jpg")
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: center
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		background: linear-gradient(180deg, rgba(17, 17, 17, 0.54) 0%, rgba(17, 17, 17, 0) 69.27%)
+
+	&__wrap
+		display: flex
+		flex-direction: column
+		height: 100vh
+		justify-content: space-between
+		position: relative
+		z-index: 10
+		padding-top: 84px
+		padding-bottom: 76px
+
+
+	&__top
+		display: flex
+		align-items: center
+		justify-content: space-between
+		@media (max-width: 560px)
+			align-items: flex-start
+			flex-direction: column
+
+	&__navigation
+		display: none
+		@media (max-width: 560px)
+			display: flex
+			justify-content: space-between
+			width: calc(100% - 24px)
+			z-index: 10
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			margin: 0 12px
+
+	&__nav-arrow
+		cursor: pointer
+		&:before
+			content: url("data:image/svg+xml,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6.99988 7L1 12.9999' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+
+	&__prev
+		transform: rotate(-180deg)
+
+

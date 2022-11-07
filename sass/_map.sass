@@ -1,0 +1,89 @@
+.map
+  &__wrapper
+    position: relative
+
+
+  &__inner
+    display: flex
+    position: absolute
+    gap: 12px
+    flex-direction: column
+    margin-left: max(12px, calc((100% - 1305px)/2))
+    top: -60px
+    max-width: max-content
+    @media (max-width: 768px)
+      top: 25px
+      flex-wrap: nowrap
+    @media (max-width: 560px)
+      position: relative
+      flex-direction: row
+      overflow-x: auto
+      &:after
+        content: ''
+        width: 0
+        flex-shrink: 0
+
+  &__card
+    display: flex
+    padding: 32px
+    gap: 80px
+    background: #14172D
+    cursor: pointer
+    @media (max-width: 991px)
+      gap: 32px
+      padding: 24px
+    @media (max-width: 768px)
+      flex-direction: column
+      padding: 16px 26px
+    @media (max-width: 560px)
+      min-width: 210px
+
+  &__title
+    font-size: 32px
+    margin-bottom: 8px
+    @media (max-width: 768px)
+      font-size: 20px
+      line-height: 22px
+    @media (max-width: 560px)
+      margin-bottom: 0
+
+  &__visible
+    cursor: pointer
+
+  &__hidden
+    display: none
+    &--active
+      display: block
+
+  &__left-hidden
+    & p
+      display: flex
+      align-items: center
+      max-width: 152px
+      color: rgba(255, 255, 255, 0.6)
+      margin-bottom: 32px
+      &:nth-child(2)
+        &:before
+          content: url("data:image/svg+xml,%3Csvg width='11' height='8' viewBox='0 0 11 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.2432 6.88242L7.6736 0L5.5 4.02328L3.3352 0L0.756801 6.88242H0V7.92549H3.8896V6.88242H3.3088L3.872 5.1688L5.5 8L7.128 5.1688L7.6912 6.88242H7.1104V7.92549H11V6.88242H10.2432Z' fill='%23FF0013'/%3E%3C/svg%3E%0A")
+          margin-right: 4px
+          transform: translateY(-2px)
+
+    & a
+      display: flex
+      align-items: center
+      &:after
+        content: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.9994 0L-0.00062561 8.12783L8.75126 11.2531L11.8766 20L19.9994 0Z' fill='url(%23paint0_linear_275_501)'/%3E%3Cpath d='M19.9995 0L8.43933 11.5652L11.8767 20L19.9995 0Z' fill='%23FFCC00'/%3E%3Cpath d='M8.12731 11.8773L11.8767 20.0001L10.6235 9.37604L-0.000518799 8.12793L8.12731 11.8773Z' fill='%23ECA704'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_275_501' x1='-0.000543949' y1='19.9996' x2='20.0003' y2='-0.0012285' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FFCC00'/%3E%3Cstop offset='1' stop-color='%23FFE992'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A")
+        margin-left: 8px
+        transform: translateY(6px)
+
+  &__items
+    &:not(:last-child)
+      margin-bottom: 20px
+
+.active
+  display: block
+
+.active-map
+  display: flex
+
+

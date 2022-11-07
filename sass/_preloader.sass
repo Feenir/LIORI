@@ -1,0 +1,110 @@
+.preloader
+  position: fixed
+  display: none
+  align-items: center
+  justify-content: center
+  background: #101118
+  width: 100%
+  height: 100%
+  top: 0
+  z-index: 100000
+
+  &__body
+    display: flex
+    align-items: center
+    flex-direction: column
+    height: 100%
+
+  &__logo-inner
+    margin-top: auto
+    margin-bottom: auto
+
+  &__logo
+    max-width: 96px
+    max-height: 30px
+
+
+  &__percentages
+    font-family: "Forum", sans-serif
+    display: flex
+    justify-content: center
+    font-size: 524px
+    line-height: 378px
+    opacity: .05
+    @media (max-width: 768px)
+      font-size: 324px
+      line-height: 238px
+    @media (max-width: 440px)
+      font-size: 236px
+      line-height: 174px
+
+.preloader
+  transition: 1s all linear
+  visibility: visible
+  display: flex
+  z-index: 69696969
+
+
+.preloader.load_done
+  opacity: 0
+  visibility: hidden
+  transition: all 3s
+  z-index: -1000000
+
+
+.preloader__body
+  justify-content: flex-end
+  transition: all .5s
+
+
+.preloader__percentages
+  font-size: 368px
+  line-height: 0.7
+  @media (max-width: 991px)
+    font-size: 244px
+  @media (max-width: 768px)
+    font-size: 200px
+  @media (max-width: 560px)
+    font-size: 160px
+  @media (max-width: 374px)
+    font-size: 120px
+
+
+.load_done .preloader__logo-inner
+  align-items: flex-start
+  justify-content: flex-start
+  transition: all .5s
+
+
+.preloader__logo-inner
+  //transition: 2s all
+  visibility: visible
+  height: 100%
+  width: 1305px
+  padding: 27px 136px 21px 111px
+  display: flex
+  justify-content: center
+  position: absolute
+  @media (max-width: 1350px)
+    width: 100%
+    padding: 27px 119px 21px 123px
+
+
+.preloader__logo-move
+  transition: .5s all
+  transform: translate(43%, 40%)
+  width: 100%
+  height: 100%
+  @media (max-width: 768px)
+    display: flex
+    justify-content: center
+    padding-left: 18px
+    transform: translate(-20%, 50%)
+  & svg
+    width: 96px
+    height: 30px
+
+
+.load_done .preloader__logo-move
+  transform: translate(0, 0)
+

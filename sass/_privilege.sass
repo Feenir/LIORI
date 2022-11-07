@@ -1,0 +1,50 @@
+.privilege
+  &__wrap
+    display: flex
+    background-image: url("../img/privilege/privilege-1.jpg")
+    background-size: 65% auto
+    background-repeat: no-repeat
+    @media (max-width: 991px)
+      background-size: 100% auto
+  &__box
+    position: relative
+    width: 50%
+    background: rgba(39, 41, 53, 0.48)
+    backdrop-filter: blur(20px)
+    margin: 83px 0 0 auto
+    padding: 70px
+    @media (max-width: 991px)
+      padding: 48px
+      width: 64%
+      margin-right: 12px
+    @media (max-width: 768px)
+      width: calc(100% - 24px)
+      margin-left: 12px
+      padding: 20px
+      margin-top: 308px
+
+  &__box-inner
+    max-width: 480px
+    &:not(:last-child)
+      margin-bottom: 72px
+      @media (max-width: 991px)
+        margin-bottom: 32px
+        max-width: unset
+
+  &__box-title
+    font-size: 32px
+    line-height: 35px
+    margin-bottom: 24px
+    @media (max-width: 991px)
+      word-wrap: break-word
+      font-size: 28px
+      line-height: 30px
+    @media (max-width: 743px)
+      font-size: 24px
+      line-height: 26px
+
+
+
+
+
+

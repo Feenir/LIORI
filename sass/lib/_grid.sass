@@ -1,0 +1,398 @@
+*
+  font-size: 16px
+  font-weight: 400
+  line-height: 23px
+  box-sizing: border-box
+  @media (max-width: 991px)
+    line-height: 20px
+    font-size: 14px
+
+
+body
+  background-color: #101118
+  font-family: 'Inter', sans-serif
+  color: white
+  overflow-x: hidden
+
+
+
+h1,h3,h4
+  font-family: 'Forum', sans-serif
+
+a
+  text-decoration: none
+  color: white
+
+p
+  color: rgba(255, 255, 255, .6)
+
+sup
+  font-size: 8px
+  color: rgba(255, 255, 255, .6)
+
+input
+  outline: none
+  border: none
+  background-color: inherit
+
+button
+  outline: none
+  border: none
+
+.container
+  max-width: 1305px
+  margin: 0 auto
+  @media (max-width: 1350px)
+    padding: 0 12px
+
+
+.title-main
+  font-size: 72px
+  line-height: 80px
+  @media (max-width: 991px)
+    font-size: 64px
+    line-height: 70px
+  @media (max-width: 768px)
+    font-size: 52px
+  @media (max-width: 560px)
+    font-size: 36px
+    line-height: 40px
+  & br
+    @media (max-width: 560px)
+      display: none
+
+
+.title-second
+  font-size: 48px
+  line-height: 66px
+  @media (max-width: 991px)
+    font-size: 36px
+    line-height: 50px
+  @media (max-width: 560px)
+    font-size: 32px
+    line-height: 44px
+
+.gradient-back
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: linear-gradient(180deg, rgba(17, 17, 17, 0.54) 0%, rgba(17, 17, 17, 0) 69.27%)
+    transform: rotate(-180deg)
+
+
+.card
+  display: flex
+  flex-direction: column
+  height: 100%
+  align-items: flex-start
+  justify-content: flex-end
+  position: relative
+
+
+  &__inner
+    z-index: 10
+    padding-right: 15px
+
+  &__square
+    color: rgba(255, 255, 255, .6)
+
+
+  &__title
+    font-family: "Inter", sans-serif
+    font-size: 24px
+    line-height: 33px
+    @media (max-width: 991px)
+      font-size: 18px
+      line-height: 25px
+
+  &__info
+    margin-bottom: 16px
+    @media (max-width: 991px)
+      margin-bottom: 8px
+
+  &__arrow
+    position: absolute
+    display: flex
+    align-items: center
+    justify-content: center
+    opacity: 0
+    width: 54px
+    height: 54px
+    background: rgba(255, 255, 255, 0.08)
+    box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.1)
+    backdrop-filter: blur(35px)
+    top: 36px
+    right: 36px
+    border-radius: 50%
+    transform: rotate(135deg)
+    transition: all 1s ease
+
+  &__arrow-svg
+    max-width: 15px
+    max-height: 15px
+
+.text-anim
+  position: absolute
+  top: 15vh
+  z-index: 100
+  height: 70vh
+  &__fast-logo
+    position: absolute
+    height: 70vh
+    top: 18.5vh
+    left: 60%
+    opacity: .05
+    @media (max-width: 560px)
+      min-width: 1000px
+
+
+.form
+  &--thanks
+    display: none
+
+  &--thanks-hidden
+    display: none
+  &--thanks-show
+    display: flex
+    flex-direction: column
+  &__inner
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    gap: 34px 24px
+    &--single
+      flex-direction: column
+      align-items: flex-start
+  &__title
+    font-size: 48px
+    line-height: 66px
+    margin-bottom: 32px
+    @media (max-width: 991px)
+      font-size: 36px
+      line-height: 50px
+    @media (max-width: 560px)
+      font-size: 32px
+      line-height: 44px
+
+  &__text
+    margin-bottom: 55px
+    &--popup
+      max-width: 418px
+    & br
+      @media (max-width: 991px)
+        display: none
+
+  &__label
+    position: relative
+    display: flex
+    flex-direction: row-reverse
+    align-items: center
+    justify-content: flex-end
+    width: 100%
+    max-width: 418px
+    padding-bottom: 20px
+    padding-left: 20px
+    border-bottom: 1px solid  rgba(255, 255, 255, .5)
+    @media (max-width: 560px)
+      max-width: unset
+
+  &__input
+    color: white
+    transition: transform .5s, font-size .5s
+    &:focus ~ .label-text,
+    &:not(:focus):valid ~ .label-text
+      top: -25px
+      font-size: 12px
+
+  &__button
+    display: flex
+    align-items: center
+    justify-content: center
+    font-family: "Forum", sans-serif
+    width: 100%
+    max-width: 419px
+    min-height: 69px
+    background: #14172D
+    color: white
+    font-size: 20px
+    cursor: pointer
+    transition: background .5s, outline .5s
+    &:hover
+      background-color: inherit
+      outline: 1px solid white
+    @media (max-width: 560px)
+      max-width: unset
+
+  &__checkbox-inner
+    display: flex
+    align-items: center
+    gap: 20px
+
+  &__personal
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 21px
+    height: 21px
+    border: 1px solid rgba(255, 255, 255, .4)
+    cursor: pointer
+    &:before
+      content: url("data:image/svg+xml,%3Csvg width='8' height='10' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 2.5625L4.25926 6L9 1' stroke='white'/%3E%3C/svg%3E%0A")
+      opacity: 1
+  &__checkbox
+    opacity: 0
+    visibility: hidden
+    pointer-events: none
+    position: absolute
+    width: 1px
+    height: 1px
+    top: -999
+    left: -999
+    &:checked + .form__personal:before
+      opacity: 0
+
+  &__personal-politic
+    letter-spacing: -0.025em
+    color: rgba(255, 255, 255, 0.6)
+    &--popup
+      max-width: 308px
+      & br
+        display: none
+    @media (max-width: 991px)
+      font-size: 12px
+      line-height: 16px
+
+
+
+.label-text
+  position: absolute
+  pointer-events: none
+  cursor: text
+  font-size: 16px
+  letter-spacing: -0.025em
+  color: rgba(255, 255, 255, 0.6)
+  transition: all 0.3s
+  top: 0
+
+.swiper-button-next:after,
+.swiper-button-prev:after
+  display: none
+
+.swiper-button-disabled
+  opacity: 0!important
+
+#pinContainer
+  width: 100%
+  height: 100vh
+  overflow: hidden
+  position: relative
+
+#pinMaster
+  position: relative
+.panel
+  height: 100%
+  width: 100%
+  position: absolute
+
+#logo
+  display: flex
+  max-width: 96px
+  max-height: 30px
+  width: 96px
+
+
+.hidden
+  overflow-y: hidden
+
+.swiper-scrollbar
+  background: rgba(255, 255, 255, .2) !important
+
+.swiper-scrollbar-drag
+  background: white !important
+
+.hover-opacity
+  opacity: 1
+  transition: opacity .5s
+  &:hover
+    opacity: .7
+
+.b-s-b-m
+  width: 100%
+  height: 20px
+  position: absolute
+  left: 0
+  right: 0
+  top: 100%
+  overflow-y: scroll
+  z-index: -1
+
+.b-s-b-m-i
+  width: 100%
+  height: 40px
+  
+
+.wrap
+  width: 100vw
+  margin: auto
+
+.items-wrap 
+  position: relative
+  display: flex
+  overflow: hidden
+  user-select: none
+  gap: 0 400px
+
+.items
+  flex-shrink: 0
+  display: flex
+  gap: 20px
+  counter-reset: item
+  justify-content: space-around
+  min-width: 100%
+
+
+.item
+  flex: 0 0 auto
+  display: flex
+  justify-content: center
+  align-items: center
+  font-size: 25px
+  margin: 10px 0
+  transition: all 0.1s ease-in-out
+  opacity: .2
+
+.marquee 
+  animation: scroll 60s linear infinite
+
+@keyframes scroll 
+  from
+    transform: translateX(0)
+
+  to
+    transform: translateX(calc(-100% - 400px))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

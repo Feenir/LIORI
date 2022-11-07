@@ -1,0 +1,134 @@
+.approach
+  &__title
+    margin-bottom: 122px
+    @media (max-width: 991px)
+      margin-bottom: 90px
+    @media (max-width: 560px)
+      margin-bottom: 0
+
+  &__horizontal
+    display: flex
+    overflow-x: visible
+
+  &__wrapper
+    display: flex
+    align-items: center
+    background-image: url("../img/approach/approach-1.jpg")
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    position: relative
+    min-height: 570px
+    min-width: 100%
+    background-position-y: 40px
+    background-color: #101118
+    &--first
+      & .approach__arrow--left
+        display: none
+    &--last
+      & .approach__arrow--right
+        display: none
+    &:before
+      content: ''
+      position: absolute
+      top: 40px
+      left: 0
+      right: 0
+      bottom: 0
+      background: rgba(0, 0, 0, 0.55)
+
+  &__container
+    width: 100%
+
+  &__info-inner
+    display: flex
+    justify-content: space-between
+    align-items: stretch
+    padding-top: 160px
+    position: relative
+    z-index: 1
+    @media (max-width: 560px)
+      flex-direction: column
+      padding-top: 0
+      gap: 50px
+
+  &__number
+    font-family: "Forum", sans-serif
+    position: absolute
+    z-index: 1
+    font-size: 128px
+    line-height: 140px
+    top: -25px
+    @media (max-width: 991px)
+      font-size: 96px
+
+  &__info-box
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    max-width: 445px
+    min-height: 250px
+    @media (max-width: 560px)
+      min-height: min-content
+    &--left
+      @media (max-width: 991px)
+        max-width: 300px
+
+  &__left-title
+    font-size: 32px
+    margin-bottom: 12px
+    white-space: nowrap
+    @media (max-width: 991px)
+      font-size: 28px
+      line-height: 30px
+    @media (max-width: 560px)
+      white-space: normal
+      font-size: 24px
+      line-height: 26px
+
+  &__right-title
+    font-size: 18px
+    line-height: 25px
+    @media (max-width: 991px)
+      font-size: 16px
+      line-height: 22px
+
+  &__horizontal-slide
+    position: relative
+    height: 100%
+    padding-top: 50px
+
+  &__horizontal-arrows
+    display: flex
+    align-items: center
+    top: 35px
+    right: max(12px, calc((100% - 1305px)/2))
+    position: absolute
+    gap: 0 10px
+    z-index: 10
+    @media (max-width: 560px)
+      top: 60px
+
+  &__arrow-inner
+    display: flex
+    align-items: center
+    justify-content: center
+    background: rgba(255, 255, 255, 0.08)
+    box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.1)
+    backdrop-filter: blur(35px)
+    border-radius: 50%
+    width: 104px
+    height: 104px
+    cursor: pointer
+    @media (max-width: 991px)
+      width: 80px
+      height: 80px
+    @media (max-width: 560px)
+      width: 56px
+      height: 56px
+  &__arrow
+    max-width: 30px
+    max-height: 30px
+    &--right
+      transform: rotate(180deg)
+

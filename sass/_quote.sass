@@ -1,0 +1,48 @@
+.quote
+  @media (max-width: 560px)
+    height: auto
+  &__text
+    display: flex
+    flex-direction: column
+    font-family: "Forum", sans-serif
+    font-size: 68px
+    line-height: 73px
+    text-align: center
+    color: white
+    position: relative
+    max-width: 1204px
+    @media (max-width: 991px)
+      font-size: 48px
+      line-height: 52px
+    @media (max-width: 560px)
+      font-size: 36px
+      line-height: 40px
+    &:before
+      content: url("data:image/svg+xml,%3Csvg width='65' height='55' viewBox='0 0 65 55' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.2' d='M49.4737 55C44.386 55 40.7018 53.2372 38.4211 49.7115C36.1404 46.1859 35 42.1314 35 37.5481C35 34.9038 35.3509 31.9952 36.0526 28.8221C36.7544 25.649 38.0702 22.476 40 19.3029C42.1053 15.9535 45 12.6923 48.6842 9.51923C52.3684 6.16988 57.2807 2.9968 63.4211 0L65 2.37981C61.4912 5.72916 58.6842 8.63782 56.579 11.1058C54.6491 13.5737 53.1579 15.8654 52.1053 17.9808C51.0526 20.0961 50.3509 22.0353 50 23.7981C49.8246 25.5609 49.7368 27.4119 49.7368 29.351C49.7368 30.7612 50.1754 31.8189 51.0526 32.524C51.9298 33.0529 52.8947 33.758 53.9474 34.6394C55.5263 35.6971 56.9298 36.7548 58.1579 37.8125C59.5614 38.6939 60.2632 40.633 60.2632 43.6298C60.2632 46.8029 59.2105 49.5353 57.1053 51.8269C55 53.9423 52.4561 55 49.4737 55ZM14.7368 55C9.64912 55 5.87719 53.2372 3.42105 49.7115C1.14035 46.1859 0 42.1314 0 37.5481C0 34.9038 0.350877 32.0833 1.05263 29.0865C1.75439 25.9135 3.1579 22.6522 5.26316 19.3029C7.36842 15.9535 10.2632 12.6923 13.9474 9.51923C17.6316 6.16988 22.5439 2.9968 28.6842 0L30.2632 2.37981C26.7544 5.72916 23.9474 8.63782 21.8421 11.1058C19.9123 13.5737 18.4211 15.8654 17.3684 17.9808C16.3158 20.0961 15.614 22.0353 15.2632 23.7981C15.0877 25.5609 15 27.4119 15 29.351C15 30.7612 15.3509 31.8189 16.0526 32.524C16.9298 33.2292 17.8947 33.8461 18.9474 34.375C20.3509 35.2564 21.7544 36.3141 23.1579 37.5481C24.7368 38.6058 25.5263 40.633 25.5263 43.6298C25.5263 46.8029 24.4737 49.5353 22.3684 51.8269C20.4386 53.9423 17.8947 55 14.7368 55Z' fill='white'/%3E%3C/svg%3E%0A")
+      text-align: left
+      font-size: 200px
+      position: absolute
+      top: -110px
+      @media (max-width: 991px)
+        top: -70px
+
+
+  &__wrapper
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    height: 100vh
+    @media (max-width: 560px)
+      padding: 120px 0
+      height: auto
+
+  &__info
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-top: 50px
+
+  &__title
+    font-family: "Inter", sans-serif
+    margin-bottom: 12px
