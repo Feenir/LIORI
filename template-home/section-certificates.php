@@ -32,32 +32,44 @@
 						</div>
 						<div class="certificates__img-big js-tab-content" data-tab="2">
 							<div class="certificates__round-inner">
-								<a class="fancybox" href="<?= get_stylesheet_directory_uri(); ?>/img/certificates/km2.jpg">
-									<img src="<?= get_stylesheet_directory_uri(); ?>/img/certificates/km2.jpg" alt="Сертификат"></a>
-								<div class="certificates__round certificates__round-top-right"></div>
-								<div class="certificates__round certificates__round-top-left"></div>
-								<div class="certificates__round certificates__round-bottom-right"></div>
-								<div class="certificates__round certificates__round-bottom-left"></div>
+								<a class="certificates__fancybox fancybox" href="<?= get_stylesheet_directory_uri(); ?>/img/certificates/km2.jpg">
+									<div class="certificates__fancybox">
+										<img src="<?= get_stylesheet_directory_uri(); ?>/img/certificates/km2.jpg" alt="Сертификат">
+										<div class="certificates__round certificates__round-top-right"></div>
+										<div class="certificates__round certificates__round-top-left"></div>
+										<div class="certificates__round certificates__round-bottom-right"></div>
+										<div class="certificates__round certificates__round-bottom-left"></div>
+									</div>
+
+								</a>
 							</div>
 						</div>
 						<div class="certificates__img-big js-tab-content" data-tab="3">
 							<div class="certificates__round-inner">
-								<a class="fancybox" href="<?= get_stylesheet_directory_uri(); ?>/img/certificates/km3.jpg">
-									<img src="<?= get_stylesheet_directory_uri(); ?>/img/certificates/km3.jpg" alt="Сертификат"></a>
-								<div class="certificates__round certificates__round-top-right"></div>
-								<div class="certificates__round certificates__round-top-left"></div>
-								<div class="certificates__round certificates__round-bottom-right"></div>
-								<div class="certificates__round certificates__round-bottom-left"></div>
+								<a class="certificates__fancybox fancybox" href="<?= get_stylesheet_directory_uri(); ?>/img/certificates/km3.jpg">
+									<div class="certificates__fancybox">
+										<img src="<?= get_stylesheet_directory_uri(); ?>/img/certificates/km3.jpg" alt="Сертификат">
+										<div class="certificates__round certificates__round-top-right"></div>
+										<div class="certificates__round certificates__round-top-left"></div>
+										<div class="certificates__round certificates__round-bottom-right"></div>
+										<div class="certificates__round certificates__round-bottom-left"></div>
+									</div>
+
+								</a>
 							</div>
 						</div>
 						<div class="certificates__img-big js-tab-content" data-tab="4">
 							<div class="certificates__round-inner">
-								<a class="fancybox" href="<?= get_stylesheet_directory_uri(); ?>/img/certificates/km4.jpg">
-									<img src="<?= get_stylesheet_directory_uri(); ?>/img/certificates/km4.jpg" alt="Сертификат"></a>
-								<div class="certificates__round certificates__round-top-right"></div>
-								<div class="certificates__round certificates__round-top-left"></div>
-								<div class="certificates__round certificates__round-bottom-right"></div>
-								<div class="certificates__round certificates__round-bottom-left"></div>
+								<a class="certificates__fancybox fancybox" href="<?= get_stylesheet_directory_uri(); ?>/img/certificates/km4.jpg">
+									<div class="certificates__fancybox">
+										<img src="<?= get_stylesheet_directory_uri(); ?>/img/certificates/km4.jpg" alt="Сертификат">
+										<div class="certificates__round certificates__round-top-right"></div>
+										<div class="certificates__round certificates__round-top-left"></div>
+										<div class="certificates__round certificates__round-bottom-right"></div>
+										<div class="certificates__round certificates__round-bottom-left"></div>
+									</div>
+
+								</a>
 							</div>
 						</div>
 					</div>

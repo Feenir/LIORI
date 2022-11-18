@@ -15,18 +15,19 @@
  */
 get_header();
 
+
 //get_template_part('template-home/section', 'approach'); 	// этапы
-//get_template_part('template-home/section', 'hero'); 		// главный экран
+get_template_part('template-home/section', 'hero'); 		// главный экран
 //get_template_part('template-home/section', 'job'); 			// !!! услуги
 //get_template_part('template-home/section', 'services'); 			// !!! услуги
 //get_template_part('template-home/section', 'done'); 		// выполненные работы
-get_template_part('template-home/section', 'quote'); 		// цитата
+//get_template_part('template-home/section', 'quote'); 		// цитата
 
-    get_template_part('template-home/section', 'spacer_gsap'); 	// !!! продукт
+//    get_template_part('template-home/section', 'spacer_gsap'); 	// !!! продукт
 
-get_template_part('template-home/section', 'info'); 		// преимущества в цифрах
-get_template_part('template-home/section', 'materials'); 	// материалы
-get_template_part('template-home/section', 'privilege'); 	// краткая инфа
+//get_template_part('template-home/section', 'info'); 		// преимущества в цифрах
+//get_template_part('template-home/section', 'materials'); 	// материалы
+//get_template_part('template-home/section', 'privilege'); 	// краткая инфа
 //get_template_part('template-home/section', 'certificates'); 	// сертификаты
 //get_template_part('template-home/section', 'partners'); 	// наши партнеры
 

@@ -8,7 +8,11 @@
  */
 
 ?>
-
+<style>
+  .card {
+    /*min-height: 65vh;*/
+  }
+</style>
 <section class="steps" id="service">
     <div class="container">
         <h2 class="cards__title">Как устроен продукт</h2>

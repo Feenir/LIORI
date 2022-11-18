@@ -37,7 +37,12 @@ get_template_part('template-home/section', 'why_we'); 	// почему мы пр
 
 if (current_user_can('manage_options')) :
     get_template_part('template-home/section', 'staff');      // руководители
-    get_template_part('template-home/section', 'client');      // наши клиенты
+endif;
+
+get_template_part('template-home/section', 'client');      // наши клиенты
+
+if (current_user_can('manage_options')) :
+
     get_template_part('template-home/section', 'faq');        // чаво
     get_template_part('template-home/section', 'map');        // карта сайта
 endif;

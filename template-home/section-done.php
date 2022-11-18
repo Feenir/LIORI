@@ -44,7 +44,7 @@
                     </div>
                 </div>
 
-                <a class="done__more done__more--mob hover-opacity" href="#">Посмотреть еще</a>
+                <a class="done__more done__more--mob hover-opacity js-formOpen" href="#">Посмотреть еще</a>
 
             </div>
 

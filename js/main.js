@@ -43,11 +43,44 @@ $(window).scroll(function(){
 // Хэдер бургер открытие
 // =======================
 $('.js-burgerOpen').click(function() {
+
+	const elPadding = $('.popup, .header, body');
+	const menuHeader = $('.header__menu');
+
 	$('.popup').slideToggle(400,"linear");
-	$('.header__menu').toggleClass('header__menu--close')
+	menuHeader.toggleClass('header__menu--close');
+
+	$('html').toggleClass('hidden');
+
+	if (menuHeader.hasClass('header__menu--close')) {
+		elPadding.css({
+			'paddingRight': window.scroll_bar_width
+		});
+		$('.header').css('background','#101118')
+	}
+
+	else	{
+		elPadding.css({
+			'paddingRight': 0
+		});
+		$('.header').css('background',' inherit')
+
+	}
+
+
+
+	return false
+
 });
 
-
+// =======================
+// Карточка получить консультацию
+// =======================
+$('.js-popupForm').click(function(event) {
+	event.preventDefault();
+	$('.popup-card--form').fadeIn().css('display','flex');
+	return false
+});
 
 // =======================
 // Карточка получить консультацию
@@ -55,17 +88,12 @@ $('.js-burgerOpen').click(function() {
 $('.js-formOpen').click(function(event) {
 	event.preventDefault();
 	$('.popup-card--form').fadeIn().css('display','flex');
-	$('.header').css({
+	$('.header, .popup-card').css({
 		'paddingRight': window.scroll_bar_width // делаем отступ у body
 	});
-	$('.popup-card').css({
-		'paddingRight': window.scroll_bar_width // делаем отступ у body
-	});
-	$('.popup').css({
-		'paddingRight': window.scroll_bar_width // делаем отступ у body
-	});
-	$('body').addClass('hidden').css({
-		'paddingRight': window.scroll_bar_width // делаем отступ у body
+	$('html').css({
+		'paddingRight': window.scroll_bar_width,
+		'overflow-y': 'hidden'
 	});
 	return false
 });
@@ -75,14 +103,13 @@ $('.js-formOpen').click(function(event) {
 // =======================
 $('.js-cardOpen').click(function() {
 	$('.popup-card--single').fadeIn().css('display','flex');
-	$('.header').css({
+	$('.header, .popup-card').css({
 		'paddingRight': window.scroll_bar_width // делаем отступ у body
 	});
-	$('.popup-card').css({
-		'paddingRight': window.scroll_bar_width // делаем отступ у body
-	});
-	$('body').addClass('hidden').css({
-		'paddingRight': window.scroll_bar_width // делаем отступ у body
+
+	$('html').css({
+		'paddingRight': window.scroll_bar_width,
+		'overflow-y': 'hidden'
 	});
 	return false
 });
@@ -91,15 +118,14 @@ $('.js-popupcardClose').click(function() {
 	$('.popup-card').fadeOut().css({
 		'paddingRight': 0 // делаем отступ у body
 	});
-	$('body').removeClass('hidden').css({
+	$('html').css({
+		'paddingRight': 0, // делаем отступ у body
+		'overflow-y': 'visible'
+	});
+	$('.header, .popup-card').css({
 		'paddingRight': 0 // делаем отступ у body
 	});
-	$('.header').css({
-		'paddingRight': 0 // делаем отступ у body
-	});
-	$('.popup').css({
-		'paddingRight': 0 // делаем отступ у body
-	});
+
 
 	return false
 });
@@ -110,15 +136,14 @@ $(document).mouseup(function (e) {
 		$('.popup-card').fadeOut().css({
 			'paddingRight': 0 // делаем отступ у body
 		});
-		$('body').removeClass('hidden').css({
+		$('html').css({
+			'paddingRight': 0, // делаем отступ у body
+			'overflow-y': 'visible'
+		});
+		$('.header, .popup-card').css({
 			'paddingRight': 0 // делаем отступ у body
 		});
-		$('.header').css({
-			'paddingRight': 0 // делаем отступ у body
-		});
-		$('.popup').css({
-			'paddingRight': 0 // делаем отступ у body
-		});
+
 		return false
 	}
 });
@@ -184,19 +209,19 @@ jQuery(($) => {
 		$('.js-map-content.active').removeClass('active');
 
 		$('.js-mapMobile').click(function() {
-			$('body').css('overflow-y','hidden')
+			$('body').addClass('hidden')
 			$('.js-mapPopup').fadeIn();
 		});
 
 		$('.js-mapClose').click(function() {
-			$('body').css('overflow-y','visible')
+			$('body').removeClass('hidden')
 			$('.js-mapPopup').fadeOut()
 		});
 
 		$(document).mouseup(function (e) {
 			var popup = $('.map-popup__inner');
 			if (e.target!=popup[0]&&popup.has(e.target).length === 0){
-				$('body').css('overflow-y','visible')
+				$('body').removeClass('hidden')
 				$('.js-mapPopup').fadeOut()
 			}
 		});
@@ -207,13 +232,14 @@ jQuery(($) => {
 // ==============================================
 $('.scrollto a').on('click', function () {
 
+	const headerHeight = $('.header').outerHeight(true)
 	let href = $(this).attr('href');
 
 	$('.popup').slideToggle(500);
 
 	function explode(){
 		$('html, body').animate({
-			scrollTop: $(href).offset().top
+			scrollTop: $(href).offset().top - headerHeight -50 + 'px'
 		}, {
 			duration: 1000,
 			easing: "linear"
@@ -223,11 +249,20 @@ $('.scrollto a').on('click', function () {
 
 
 	$('.header__menu').removeClass('header__menu--close')
-
-
-
+	$('html').removeClass('hidden');
+	$('.header').css('background',' inherit')
 
 	return false;
+});
+
+
+$(".scrolltoFooter a").on("click", function(e){
+	const headerHeight = $('.header').outerHeight(true)
+	e.preventDefault();
+	var anchor = $(this).attr('href');
+	$('html, body').stop().animate({
+		scrollTop: $(anchor).offset().top - headerHeight -50 + 'px'
+	}, 500);
 });
 
 // ==============================================
@@ -240,6 +275,8 @@ $('.scrollto a').on('click', function () {
 // ==============================================
 // Наведение на материалы
 // ==============================================
+
+/*
 $(".mat__item").hover(
 	function () {
 		$(this).addClass("mat__item--active") },   //при наведении курсора на элемент
@@ -247,7 +284,7 @@ $(".mat__item").hover(
 		function () {
 		$('.mat__item').removeClass("mat__item--active")
 	} //при уводе курсора с элемента
-);
+); */
 
 
 // ==============================================
@@ -260,17 +297,19 @@ scrollContainer.addEventListener("wheel", (evt) => {
 	scrollContainer.scrollLeft += evt.deltaY;
 });
 
-const scrollContainerMat = document.querySelector(".js-scrolMat");
+const scroll = document.querySelector(".js-mat");
 
-scrollContainerMat.addEventListener("wheel", (evt) => {
+scroll.addEventListener("wheel", (evt) => {
 	evt.preventDefault();
-	scrollContainerMat.scrollLeft += evt.deltaY;
+	scroll.scrollLeft += evt.deltaY;
 });
+
+
 
 // ==============================================
 // Маска на телефон
 // ==============================================
-// $('.js-maskPhone').mask("+9(999) 999-9999");
+$('.js-maskPhone').mask("+9(999) 999-9999");
 
 
 

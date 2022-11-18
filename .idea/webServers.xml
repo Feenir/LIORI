@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="e8a56ba9-e68b-4e9f-a681-d5420f12bc3a" name="LIORI" url="http://92.53.96.245">
-        <fileTransfer host="92.53.96.245" port="21">
+      <webServer id="e8a56ba9-e68b-4e9f-a681-d5420f12bc3a" name="LIORI" url="http://5.23.51.236">
+        <fileTransfer host="5.23.51.236" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" connections="3" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

@@ -9,10 +9,14 @@
 	z-index: 1000
 
 	&__body
+		position: relative
 		display: flex
 		height: 100vh
 		top: 50%
 		flex-direction: column
+		overflow-y: auto
+		z-index: 100
+		padding-bottom: 40px
 
 	&__header
 		position: static
@@ -47,14 +51,17 @@
 		align-items: center
 		justify-content: center
 		background-color: #14172D
-		border: 1px solid white
 		min-height: 70px
 		max-width: 420px
-		margin: auto 0 24px auto
-		transition: background .5s
+		margin: auto 0 0 auto
+		transition: background .5s, border .5s
 		padding: 24px 76px
 		&:hover
 			background-color: inherit
+			border: 1px solid white
+		@media (max-width: 991px)
+			max-width: unset
+			width: 100%
 		@media (max-width: 560px)
 			padding: 20px 24px
 
@@ -66,6 +73,7 @@
 		cursor: pointer
 		max-height: 30px
 		margin-right: 106px
+
 
 .popup-card
 	display: none
@@ -80,11 +88,22 @@
 	z-index: 1000000
 	@media (max-width: 1240px)
 		overflow-y: auto
+	&--single
+		& .form
+			@media (max-width: 560px)
+				width: 100%
+		@media (max-width: 560px)
+			align-items: flex-start
+
+
 
 	&__swiper
 		max-width: 688px
 		@media (max-width: 1240px)
 			max-height: 300px
+			max-width: 100%
+		@media (max-width: 560px)
+			max-height: 500px
 
 	&__body
 		display: flex
@@ -95,7 +114,6 @@
 		position: relative
 		max-height: 768px
 		overflow: hidden
-
 		&--single
 			max-width: 1304px
 			@media (max-width: 1240px)
@@ -105,15 +123,22 @@
 			@media (max-width: 991px)
 				max-width: unset
 				width: 100%
-
+			@media (max-width: 560px)
+				align-items: flex-start
+				overflow: auto
+				width: calc(100% - 24px)
+				margin: 12px 0
 
 	&__img-big
 		height: 100%
-		@media (max-width: 991px)
-			display: none
 		&--single
+			& img
+				width: 100%
 			@media (max-width: 991px)
 				display: block
+		&--form
+			@media (max-width: 1240px)
+				display: none
 
 
 
@@ -121,20 +146,26 @@
 		display: flex
 		align-items: center
 		padding: 88px 62px 72px 72px
-
-		&--single
-			align-items: flex-start
-			flex-direction: column
-			min-width: 616px
-			@media (max-width: 1240px)
-				align-items: center
-
 		@media (max-width: 991px)
 			padding: 44px 36px 36px 36px
 		@media (max-width: 768px)
 			padding: 22px 18px 18px 18px
 		@media (max-width: 560px)
 			padding: 78px 18px 18px 18px
+		&--single
+			align-items: flex-start
+			flex-direction: column
+			min-width: 616px
+			padding: 88px 116px 72px 72px
+			@media (max-width: 1240px)
+				align-items: center
+				padding: 116px 64px 64px 64px
+			@media (max-width: 991px)
+				min-width: unset
+				width: 100%
+			@media (max-width: 560px)
+				padding: 116px 28px 28px 28px
+
 
 	&__in
 		margin-bottom: 16px
@@ -149,12 +180,19 @@
 		line-height: 39px
 		max-width: 302px
 		margin-bottom: 24px
+		@media (max-width: 560px)
+			text-align: center
+			font-size: 24px
+			line-height: 26px
+			margin-bottom: 12px
 
 	&__in-text
-		margin-bottom: 32px
+		margin-bottom: 62px
 		max-width: 426px
-
-
+		@media (max-width: 560px)
+			text-align: center
+			font-size: 14px
+			line-height: 20px
 
 
 	&__arrow-round
@@ -169,18 +207,49 @@
 		box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.1)
 		backdrop-filter: blur(35px)
 		cursor: pointer
+		pointer-events: auto
 
 	&__pagination-arrow
 		max-width: 15px
 		max-height: 15px
 
+	&__thumb-swiper
+		min-width: 472px
+		@media (max-width: 560px)
+			min-width: 288px
+
+
+
+	&__thumb-wrapper
+		position: absolute
+		bottom: 20px
+		left: 46%
+		@media (max-width: 1240px)
+			bottom: auto
+			top: 210px
+			left: calc(50% - 240px)
+		@media (max-width: 560px)
+			top: 42%
+			left: 50%
+			transform: translateX(-50%)
+			z-index: 10
+
+	&__thumb-inner
+		display: flex
+		position: relative
+		max-width: 432px
+		@media (max-width: 560px)
+			max-width: 20px
+
 
 	&__arrow-left
-		left: -30px
+		left: -60px
+		z-index: 20
 
 	&__arrow-right
 		transform: rotate(180deg)
-		right: -30px
+		right: -44px
+		z-index: 20
 
 	&__pagination-close
 		position: absolute
@@ -191,34 +260,19 @@
 		max-height: 30px
 		z-index: 10000
 		@media (max-width: 560px)
-			right: auto
+			right: calc(50% - 15px)
 			top: 24px
-
-	&__thumb-swiper
-		min-width: 600px
-
-	&__thumb-wrapper
-		position: absolute
-		bottom: 60px
-		left: 46%
-		@media (max-width: 1240px)
-			bottom: auto
-			top: 210px
-			left: calc(50% - 300px)
-
-	&__thumb-inner
-		display: flex
-		position: relative
-		max-width: 432px
 
 	&__thumb-img
 		display: flex
-		padding: 0 30px
 		& img
-			max-width: 144px
+			max-height: 170px
+			min-width: 144px
+			@media (max-width: 560px)
+				min-width: 88px
+				max-height: 100px
 
 	&__thumb-pagination
-		z-index: 1000
 		display: flex
 		justify-content: space-between
 		position: absolute
@@ -226,10 +280,14 @@
 		left: 35px
 		width: calc(100% - 65px)
 		transform: translateY(-50%)
+		z-index: 50
+		pointer-events: none
 
 	&__button
 		margin-top: 24px
 
+	&__personal
+		margin-top: 16px
 
 .map-popup
 	display: none
@@ -277,6 +335,8 @@
 		left: calc(50% - 11px)
 		max-width: 22px
 		max-height: 22px
+		@media (max-width: 560px)
+			top: 7.5%
 
 
 

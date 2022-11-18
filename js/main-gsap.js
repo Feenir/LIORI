@@ -73,9 +73,13 @@ t1_main.to(".hero__text", { opacity: 1, duration: 1 });
 
 
 
-// =======================
+
+
+// .text-anim
+
+// =====================================================================================================================
 // gsap экран услуг
-// =======================
+// =====================================================================================================================
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -84,7 +88,8 @@ let container = document.querySelector('.gsap_services_wrap')
 
 let scrollTween = gsap.to(sections, {
     // xPercent: -90 * (sections.length - 1),
-    xPercent: -300 * (sections.length - 400),
+    xPercent: -160 * (sections.length - 5),
+    // xPercent: -300 * (sections.length - 400),
     ease: "none",
     duration: 6,
     scrollTrigger: {
@@ -92,14 +97,16 @@ let scrollTween = gsap.to(sections, {
         pin: true,
         scrub: true,
         markers: false, // only during development!
-        end: `+=${container.offsetWidth / 10 }`
+        end: `+=${container.offsetWidth}` // cтоковый
+        // end: `+=${container.offsetWidth / 3 }` //
+        // end: `+=${container.offsetWidth / 10 }`
     }
 });
 
 
-// =====================================================================
+// =====================================================================================================================
 // gsap 2 экрана ( почему мы, перечисление ценностей)
-// =====================================================================
+// =====================================================================================================================
 
 var controller = new ScrollMagic.Controller();
 
@@ -127,9 +134,9 @@ $(".gs_wrapper").each(function() {
 
 
 
-// =====================================================================
+// =====================================================================================================================
 // gsap как устроен продукт
-// =====================================================================
+// =====================================================================================================================
 
 ScrollTrigger.create({
     trigger: ".card1",
@@ -144,7 +151,7 @@ ScrollTrigger.create({
 ScrollTrigger.create({
     trigger: ".card2",
     // start: "top center-=160",
-    start: "top top+=140",
+    start: "top top+=160",
     endTrigger: ".cards",
     end: "bottom bottom-=60%",
     pin: true,
@@ -174,10 +181,65 @@ ScrollTrigger.create({
 ScrollTrigger.create({
     trigger: ".card5",
     // start: "top center-=120",
-    start: "top top+=200",
+    start: "top top+=160",
     endTrigger: ".cards",
     end: "bottom bottom-=60%",
     pin: true,
     // markers: true,
     pinSpacing: true
 });
+
+
+
+// =====================================================================================================================
+// gsap Logo
+// =====================================================================================================================
+
+gsap.to(".gs_anim_logo_0", {
+    repeat: 0,
+    ease: "none",
+    x: '-200%',
+    duration: 36
+}, );
+gsap.to(".gs_anim_logo_1", {
+    repeat: 99,
+    ease: "none",
+    x: '-200%',
+    delay: 9,
+    duration: 36
+}, );
+
+gsap.to(".gs_anim_logo_2", {
+    repeat: 99,
+    ease: "none",
+    x: '-200%',
+    delay: 24,
+    duration: 36
+}, );
+
+
+
+
+
+// =====================================================================================================================
+// gsap цитата
+// =====================================================================================================================
+
+// const quote = document.querySelector('.quote__text')
+// const letters = quote.innerHTML.split('')
+//
+// quote.innerHTML = '';
+//
+// const spanArray = letters.map (
+//   letter => {
+//       const item = document.createElement('span')
+//       item.classList.add('letter')
+//       item.innerHTML = letter
+//       quote.appendChild(item)
+//       return item
+//   }
+// )
+
+
+
+

@@ -64,6 +64,8 @@ const hero = new Swiper(".heroJS", {
 // =======================
 const clientsSwiper = new Swiper(".js-client", {
 	slidesPerView: 1,
+	effect: "fade",
+	loop: true,
     navigation: {
         nextEl: ".js-clientPrev",
         prevEl: ".js-clientNext",
@@ -71,23 +73,7 @@ const clientsSwiper = new Swiper(".js-client", {
 });
 
 
-// =======================
-// Слайдер карточка товара одиночный слайд
-// =======================
-const cardSingle = new Swiper(".js-cardSingle", {
-	slidesPerView: 1,
-});
 
-// =======================
-// Слайдер карточка товара миниатюра
-// =======================
-const cardSinglethumb = new Swiper(".js-cardSingle-thumb", {
-	slidesPerView: 3,
-	navigation: {
-		nextEl: ".js-cardSingle-thumbNext",
-		prevEl: ".js-cardSingle-thumbprev",
-	},
-});
 
 
 // =======================
@@ -122,11 +108,103 @@ const approachJSslider = new Swiper(".approachJSslider", {
 
 
 
+// // =======================// =======================// =======================// =======================
+// // Слайдер карточка товара одиночный слайд
+// // =======================// =======================// =======================// =======================
+// const cardSingle = new Swiper(".js-cardSingle", {
+// 	slidesPerView: 1,
+// });
+//
+// // =======================// =======================// =======================// =======================
+// // Слайдер карточка товара миниатюра
+// // =======================// =======================// =======================// =======================
+// const cardSinglethumb = new Swiper(".js-cardSingle-thumb", {
+// 	slidesPerView: 3,
+// 	navigation: {
+// 		nextEl: ".js-cardSingle-thumbNext",
+// 		prevEl: ".js-cardSingle-thumbprev",
+// 	},
+// });
+//
 
 
 
 
+$(document).ready(function () {
 
+	// import Swiper from 'swiper/bundle';
+	// import { isWindowSizeSmallerThen } from './utils/helpers';
+
+	let swiperBigPhoto, swiperSmallPhotos;
+	const breakpoint = window.matchMedia('(max-width: 319px)');
+
+	function initMainMediaSlider() {
+		const bigPhotos = document.querySelector('.js-cardSingle')
+		const smallPhotos = document.querySelector('.js-cardSingle-thumb')
+
+		if (!bigPhotos && !smallPhotos) {
+			return
+		}
+		breakpoint.addListener(breakpointChecker);
+		breakpointChecker();
+	}
+
+	function initSwipers() {
+		swiperBigPhoto = new Swiper('.js-cardSingle', {
+			slidesPerView: 'auto',
+			spaceBetween: 40,
+			loop: true,
+			// effect: "fade", // - работает криво
+			// pagination: {
+			// 	el: '.js-media-slider-scrollbar',
+			// 	type: 'progressbar',
+			// },
+		});
+
+		swiperSmallPhotos = new Swiper('.js-cardSingle-thumb', {
+			// slidesPerView: 'auto',
+			slidesPerView: 3,
+			spaceBetween: 0,
+			loop: true,
+			// effect: "fade", // - работает криво
+			navigation: {
+				nextEl: '.js-cardSingle-thumbNext',
+				prevEl: '.js-cardSingle-thumbprev',
+			},
+		});
+
+		swiperSmallPhotos.controller.control = swiperBigPhoto;
+		swiperBigPhoto.controller.control = swiperSmallPhotos;
+	}
+
+	const breakpointChecker = function() {
+		if (breakpoint.matches === true) {
+			swiperBigPhoto && swiperBigPhoto.destroy(true, true);
+			swiperSmallPhotos && swiperSmallPhotos.destroy(true, true);
+		} else {
+			return initSwipers();
+		}
+	};
+
+	initMainMediaSlider();
+
+});
+
+
+// =======================
+// Материалы
+// =======================
+const jsMaterials = new Swiper(".jsMaterials", {
+	slidesPerView: 'auto',
+	mousewheel: true,
+	centeredSlides: true,
+	loop: true,
+	// effect: "fade",
+	// navigation: {
+	// 	nextEl: ".js-clientPrev",
+	// 	prevEl: ".js-clientNext",
+	// },
+});
 
 
 

@@ -28,6 +28,17 @@
 		<meta name="msapplication-TileImage" content="<?= get_stylesheet_directory_uri(); ?>/favicon//mstile-144x144.png">
 		<meta name="theme-color" content="#ffffff">
 
+
+		<meta property="og:title" content="LIORI"/>
+		 <meta property="og:site_name" content="Столярные изделия" />
+		<meta property="og:url" content= "https://liori.ru/"/>
+		<meta property="og:image" content="<?= get_stylesheet_directory_uri(); ?>/img/opengraph.jpg"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="600">
+		<meta property="og:image:type" content="image/jpg">
+
+
 		<?php wp_head(); ?>
 	</head>
 

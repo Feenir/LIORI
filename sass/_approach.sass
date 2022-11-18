@@ -22,6 +22,8 @@
     min-width: 100%
     background-position-y: 40px
     background-color: #101118
+    @media (max-width: 560px)
+      min-height: unset
     &--first
       & .approach__arrow--left
         display: none
@@ -47,6 +49,8 @@
     padding-top: 160px
     position: relative
     z-index: 1
+    @media (max-width: 991px)
+      padding-top: 80px
     @media (max-width: 560px)
       flex-direction: column
       padding-top: 0
@@ -69,29 +73,46 @@
     max-width: 445px
     min-height: 250px
     @media (max-width: 560px)
-      min-height: min-content
+      min-height: unset
+      height: 250px
+
     &--left
       @media (max-width: 991px)
         max-width: 300px
+        min-height: 224px
+      @media (max-width: 560px)
+        padding-top: 100px
+        min-height: unset
+    &--right
+      @media (max-width: 560px)
+        margin-top: 70px
+        height: 160px
 
   &__left-title
     font-size: 32px
-    margin-bottom: 12px
+    margin-bottom: 20px
     white-space: nowrap
     @media (max-width: 991px)
       font-size: 28px
       line-height: 30px
-    @media (max-width: 560px)
       white-space: normal
+    @media (max-width: 560px)
       font-size: 24px
       line-height: 26px
 
   &__right-title
     font-size: 18px
     line-height: 25px
+    margin-bottom: 14px
     @media (max-width: 991px)
       font-size: 16px
       line-height: 22px
+
+  &__right-text
+    &:not(:last-child)
+      margin-bottom: 12px
+      @media (max-width: 560px)
+        margin-bottom: 0
 
   &__horizontal-slide
     position: relative
